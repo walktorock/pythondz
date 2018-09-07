@@ -50,6 +50,6 @@ while i > len(list_int):
     else:
         list2.append(list_int[i] * 2)
     i += 1
-print(list2)
-
+    print(list2)
+#Все равно не отображает как надо
 #Старался как мог
