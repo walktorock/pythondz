@@ -45,7 +45,7 @@ list2 = []
 i = 0
 while i < len(list_int):
     answer = list_int[i] / 2
-    if answer == int():
+    if answer == int(answer):
         list2.append(answer / 2)
     else:
         list2.append(list_int[i] * 2)
