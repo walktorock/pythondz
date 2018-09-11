@@ -38,3 +38,11 @@ max_num(x, y, z)
 # Задание - 3
 # Создайте функцию, принимающую неограниченное количество строковых аргументов,
 # верните самую длинную строку из полученных аргументов
+word_list = []
+def max_str (*args):
+    for word in args:
+        word_list.append(word)
+    print(max(word_list, key=len))
+
+max_str('gdfgfggdfgdf', 'fsdfsdfs', 'wer', 'mwem')
+
