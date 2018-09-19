@@ -15,9 +15,14 @@ def create_dir():
 
 def remove_dir():
     files = os.listdir()
-    i = 1
-    while i < 
+    i = 0
+    while i < len(files):
+        dirs = os.path.join(os.getcwd(), files[i])
+        if dirs.endswith('_{}'.format(i)):
+            os.remove(dirs)
+        i += 1
 
+#Отказ в доступе при попытке выполнить скрипт
 
 # Задача-2:
 # Напишите скрипт, отображающий папки текущей директории.
