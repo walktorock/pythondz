@@ -16,8 +16,8 @@
 
 # P.S. По возможности, сделайте кросс-платформенную реализацию.
 
-import os
-import sys
+import os, shutil, sys
+
 
 print('sys.argv = ', sys.argv)
 
@@ -40,7 +40,10 @@ def copyfile():
         print('Указанный файл не найден')
 
 def change_dir(folder):
-    os.chdir(folder)
+    try:
+        print(os.chdir(folder))
+    except FileNotFoundError:
+        print('Директория не найдена')
 
 def ldir():
     print(os.listdir())
