@@ -8,12 +8,10 @@
 #  о том что машина поехала, остановилась, повернула(куда)
 
 class Cars:
-
-    def __init__(self, speed, color, name):
+    def __init__(self, speed, color, name,):
         self.speed = speed
         self.color = color
         self.name = name
-        self.is_police = False
 
 
     def go(self):
@@ -22,6 +20,9 @@ class Cars:
     def stop(self):
         print(self.color, self.name, 'stopped')
 
+    def is_police(self):
+        return print(False)
+
     def turn(self, direction):
         if direction == 'Right':
             print(self.color, self.name, 'turned right')
@@ -29,6 +30,7 @@ class Cars:
             print(self.color, self.name, 'turned left')
         else:
             print('Direction unavailable')
+
 
 
 class TownCar(Cars):
@@ -41,10 +43,8 @@ class WorkCar(Cars):
     pass
 
 class PoliceCar(Cars):
-    def __init__(self,  speed, color, name):
-        super().__init__(speed, color, name)
-        self.is_police = True
-
+    def is_police(self):
+        return print(True)
 
 town_car = TownCar('120', 'red', 'BMW')
 policec = PoliceCar('140', 'green', 'Toyota')
@@ -55,6 +55,7 @@ town_car.go()
 workc.stop()
 sportc.turn(direction='Right')
 #Почему то программа не хочет возвращать булево значение is_police
+town_car.is_police()
 policec.is_police()
 
 # Задача - 2
