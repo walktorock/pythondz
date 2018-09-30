@@ -46,13 +46,52 @@ import  random
 Подсказка: для работы с псевдослучайными числами удобно использовать 
 модуль random: http://docs.python.org/3/library/random.html
 """
-a = [['', '', '', '', '', '', '', '', ''],
-     ['', '', '', '', '', '', '', '', ''],
-     ['', '', '', '', '', '', '', '', '']]
+# Первая попытка
+# def get_card():
+#     a = [['', '', '', '', '', '', '', '', '\n'],
+#          ['', '', '', '', '', '', '', '', '\n'],
+#          ['', '', '', '', '', '', '', '', '\n']]
+#
+#     for i in a:
+#         for n in i:
+#             a[0][random.randint(0, 8)] = random.randint(0, 89)
+#             a[1][random.randint(0, 8)] = random.randint(0, 89)
+#             a[2][random.randint(0, 8)] = random.randint(0, 89)
+#
+#     print(a)
 
-for i in a:
-    a[0][random.randint(0, 8)] = random.randint(0, 89)
-    a[1][random.randint(0, 8)] = random.randint(0, 89)
-    a[2][random.randint(0, 8)] = random.randint(0, 89)
+#Вторая попытка
+# def get_card():
+#     a = [[],[],[]]
+#     s = 0
+#     n = 0
+#     while s < 3:
+#         while n < 5:
+#             a[n].append(random.randint(1, 91))
+#             n += 1
+#         s += 1
+#     print(a)
 
-print(a)
+#Третья попытка
+
+def get_card():
+    list = []
+    
+# Попытка описать функцию доставания бочонков, но в конце возникает
+# ошибка Cannot choose from an empty sequence
+
+def get_bochonok():
+    remains = [i for i in range(1, 91)]
+    i = 0
+    while i < 91:
+        num = random.choice(remains)
+        print(f'Новый бочонок {num}')
+        remains.remove(num)
+        print('Осталось', len(remains))
+        i += 1
+        ans = input('Хотите зачеркнуть число? y/n')
+        if ans == 'n':
+            break
+    raise StopIteration
+
+
